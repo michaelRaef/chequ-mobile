@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cheques
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="allCheques.length>=0">
+    <ion-item *ngFor="let ch of allCheques;let i = index">
+      <ion-card class="welcome-card" style="width:100%" (click)="chequeActions(i)">
+        <ion-card-header>
+          <ion-card-subtitle>Issued in: {{ch.issueDate | date:'mediumDate'}} </ion-card-subtitle>
+          <ion-card-title>Cheque Number: {{ch.chequeID}} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Payed to: {{ch.payedTo}}</p>
+          <p>Exchange Date: {{ch.exchangeDate | date:'mediumDate'}}</p>
+          <p>Status: {{ch.status}}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list *ngIf="allCheques.length==0">
+    <ion-item>
+      <ion-card class="welcome-card" style="width:100%">
+        <ion-card-header>
+          <ion-card-subtitle>Here cheques are viewed </ion-card-subtitle>
+          <ion-card-title>No Cheques are issued yet</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

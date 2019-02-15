@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-subtitle>Welcome again {{usr.firstName}} {{usr.lastName}}</ion-card-subtitle>
+      <ion-card-title>Welcome to Cheque App</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>This App was made to track your cheques and issue new ones!!</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon name="contact"></ion-icon>
+      <ion-item>
+        <ion-label>Name: {{usr.firstName}} {{usr.lastName}}</ion-label>
+      </ion-item>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="logo-usd"></ion-icon>
+      <ion-item>
+        <ion-label>Bank Account: {{usr.bankAccount}}</ion-label>
+      </ion-item>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="wallet"></ion-icon>
+      <ion-item>
+        <ion-label>Balance: {{usr.balance}}</ion-label>
+      </ion-item>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="finger-print"></ion-icon>
+      <ion-item>
+        <ion-label>Fingerprint: Encrypted</ion-label>
+      </ion-item>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="card"></ion-icon>
+      <ion-item>
+        <ion-label>Have Cheque: true</ion-label>
+      </ion-item>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

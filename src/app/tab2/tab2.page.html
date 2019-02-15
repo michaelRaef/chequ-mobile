@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Issue Cheque
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Payed To</ion-label>
+    <ion-input [(ngModel)]="chequeData.payedTo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Date</ion-label>
+    <ion-datetime display-format="YYYY-MM-DD" min="2019" placeholder="Select Date" [(ngModel)]="chequeData.exchangeDate"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Value</ion-label>
+    <ion-input [(ngModel)]="chequeData.exchangeValue"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Currency</ion-label>
+    <ion-input [(ngModel)]="chequeData.exchangeCurrency"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Memo</ion-label>
+    <ion-input [(ngModel)]="chequeData.memo"></ion-input>
+  </ion-item>
+
+  
+  <ion-item>
+    <ion-label position="floating">Send to bank</ion-label>
+    <ion-checkbox color="primary" [(ngModel)]="toBank"></ion-checkbox>
+  </ion-item>
+
+  <ion-item *ngIf="toBank">
+    <ion-label position="floating">Bank Account</ion-label>
+    <ion-input [(ngModel)]="chequeData.bankDetails.bankAccount"></ion-input>
+  </ion-item>
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="presentAlertConfirm()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

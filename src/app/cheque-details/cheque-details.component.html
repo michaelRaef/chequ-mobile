@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cheque details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let ch of cheque.history;let i = index">
+      <ion-card class="welcome-card" style="width:100%" (click)="chequeActions(i)">
+        <ion-card-header>
+          <ion-card-subtitle>Transaction date: {{ch.txTime | date:'mediumDate'}} </ion-card-subtitle>
+          <ion-card-title>Transaction Type: {{ch.txType}} </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Comment: {{ch.txMsg}}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
